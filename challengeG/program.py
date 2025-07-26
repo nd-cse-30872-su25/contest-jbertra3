@@ -12,7 +12,7 @@ Graph = list[list[int]]
 def circuits(graph: Graph, start: int=0) -> int:
     frontier = deque([start])
     visited  = set()
-    count = 0
+    count    = 0
     
     for i in range(len(graph)):
         if i in visited:
@@ -40,19 +40,20 @@ def circuits(graph: Graph, start: int=0) -> int:
      
 def main():
     system = 1
-    while True:
-        
+    while True: 
         line = sys.stdin.readline()
         if not line:
             break
         vertices = int(line)
     
         graph = []
+        
         for i in range(vertices):
             row = list(map(int, sys.stdin.readline().split()))
             graph.append(row)
-    
+        
         count = circuits(graph)
+        
         print(f"System {system} isolated circuits: {count}")
         
         system += 1 
